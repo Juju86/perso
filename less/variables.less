@@ -392,7 +392,7 @@
 //##
 
 // Basics of a navbar
-@navbar-height:                    80px;
+@navbar-height:                    76px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             0px;
 @navbar-border-width:              5px;
@@ -400,12 +400,15 @@
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 
 @navbar-brand-padding-vertical: (@navbar-height * 0.05);
-@navbar-brand-padding-horizontal: (@navbar-height * 1);
+@navbar-brand-padding-horizontal: (@navbar-height * 0.25);
+
+@navbar-brand-ratio: 1.75;
 
 @brand-height: 190px;
 @brand-width: 191px;
 
 @navbar-collapse-max-height:       340px;
+@navbar-collapse-default-border:   fade(@navbar-default-border, 25%);
 
 @navbar-default-color:             #fff;
 @navbar-default-bg:                fade(#0f2346, 50%);
@@ -420,7 +423,8 @@
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
 
-@navbar-defaukt-link-font-size:            28px;
+@navbar-defaukt-link-font-size:            18px;
+@navbar-defaukt-link-text-transform:       uppercase;
 
 // Navbar brand label
 @navbar-default-brand-color:               @navbar-default-link-color;

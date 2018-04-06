@@ -1,29 +1,104 @@
 // Brand/project name
 
 .navbar-brand {
-  float: left;
   padding: @navbar-brand-padding-vertical @navbar-brand-padding-horizontal;
-  font-size: @font-size-large;
-  line-height: @line-height-computed;
-  height: @navbar-height;
 
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
 
   > img {
     display: block;
     .img-responsive();
 
+    transition: all 400ms ease 100ms;
+
     height: ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) );
     width: ( ( ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) ) * @brand-width ) / @brand-height );
+
+    @media (min-width: @grid-float-breakpoint) {
+      height: ( ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) ) * @navbar-brand-ratio );
+      width: ( ( ( ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) ) * @brand-width ) / @brand-height ) * @navbar-brand-ratio );
+    }
+  }
+
+  .scrolled & {
+    > img {
+      height: ( ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) ) * @navbar-brand-ratio );
+      width: ( ( ( ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) ) * @brand-width ) / @brand-height ) * @navbar-brand-ratio );
+    }
+  }
+
+
+  @media (min-width: @grid-float-breakpoint) {
+
+  }
+}
+
+
+
+// Navbar nav links
+//
+// Builds on top of the `.nav` components with its own modifier class to make
+// the nav the full height of the horizontal nav (above 768px).
+
+.navbar-nav {
+  > li > a {
+    font-size: @navbar-defaukt-link-font-size;
+    text-transform: @navbar-defaukt-link-text-transform;
+  }
+}
+
+
+
+
+.navbar-default {
+  transition: all 400ms ease 100ms;
+
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: @navbar-collapse-default-border;
   }
 
   @media (min-width: @grid-float-breakpoint) {
-    .navbar > .container &,
-    .navbar > .container-fluid & {
-      margin-left: -@navbar-padding-horizontal;
+    padding-top: ( @navbar-padding-vertical * .75 );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Brand/project name
+body.scrolled {
+
+  .navbar-brand {
+    > img {
+      @media (min-width: @grid-float-breakpoint) {
+        height: ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) );
+        width: ( ( ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) ) * @brand-width ) / @brand-height );
+      }
     }
   }
+
+
+  .navbar-default {
+    @media (min-width: @grid-float-breakpoint) {
+      padding-top: ( @navbar-padding-vertical * 0 );
+    }
+  }
+
 }

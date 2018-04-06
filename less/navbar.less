@@ -1,0 +1,29 @@
+// Brand/project name
+
+.navbar-brand {
+  float: left;
+  padding: @navbar-brand-padding-vertical @navbar-brand-padding-horizontal;
+  font-size: @font-size-large;
+  line-height: @line-height-computed;
+  height: @navbar-height;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  > img {
+    display: block;
+    .img-responsive();
+
+    height: ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) );
+    width: ( ( ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) ) * @brand-width ) / @brand-height );
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    .navbar > .container &,
+    .navbar > .container-fluid & {
+      margin-left: -@navbar-padding-horizontal;
+    }
+  }
+}

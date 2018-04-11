@@ -1,0 +1,121 @@
+// Setting up the palette colors
+@palette1:#fbd33a;
+@palette2:#112346;
+@palette3:#0f2346;
+@palette4:#303030;
+
+// Setting up the palette mixins
+/*  This will create three classes:
+    1. .palette1    For background-color
+    2. .palette1-b  For border-color
+    2.1. .palette1-b-t For border-top-color
+    2.2. .palette1-b-r For border-right-color
+    2.3. .palette1-b-b For border-bottom-color
+    2.4. .palette1-b-l For border-left-color
+    3. .palette1-t  For text-color
+*/
+.palette(@color) {
+  &-bg    {background-color:    @color}
+  &-b     {border-color:        @color}
+  &-b-t   {border-top-color:    @color}
+  &-b-r   {border-right-color:  @color}
+  &-b-l   {border-left-color:   @color}
+  &-b-b   {border-bottom-color: @color}
+  &-t     {color:               @color}
+}
+
+// Setting up the color generator loop
+.generate-colors(@n, @i:1) when (@i =< @n) {
+  // e("") escapes the "
+  @color: e("palette@{i}");
+  .palette@{i}{
+    //@@ uses the variable value as the variable name
+    .palette(@@color);
+  }
+  .generate-colors(@n, (@i + 1));
+}
+
+.generate-colors(4);
+
+
+
+
+//====================================
+//              FOR LOOP             =
+//====================================
+.for(@i, @n) {
+    .-each(@i)
+  }
+
+  .for(@n) when (isnumber(@n)) {
+    .for(1, @n)
+  }
+
+  .for(@i, @n) when not (@i =@n) {
+    .for((@i + (@n - @i) / abs(@n - @i)), @n);
+  }
+  //--------  End of for loop  ---------//
+
+
+
+  //=========================================
+  //              FOR EACH LOOP             =
+  //=========================================
+  .for(@array) when (default()) {
+    .for-impl_(length(@array))
+  }
+
+  .for-impl_(@i) when (@i > 1) {
+    .for-impl_((@i - 1))
+  }
+
+  .for-impl_(@i) when (@i > 0) {
+    .-each(extract(@array, @i))
+  }
+  //--------  End of for each loop  ---------//
+
+
+
+
+
+
+  @screen-xl: 1600px;
+  @values-array: 0, 5, 10, 15, 20, 30, 40, 50;
+
+
+  @media (min-width: @screen-xs) {
+    .make-space(@prefix: xs);
+  }
+
+  @media (min-width: @screen-sm) {
+    .make-space(@prefix: sm);
+  }
+
+  @media (min-width: @screen-md) {
+    .make-space(@prefix: md);
+  }
+
+  @media (min-width: @screen-lg) {
+    .make-space(@prefix: lg);
+  }
+
+  @media (min-width: @screen-xl) {
+    .make-space(@prefix: xl);
+  }
+
+
+  .make-space(@prefix) {
+    .for(@values-array);
+    .-each(@value) {
+      .@{prefix}-p-@{value}   { padding:        ~"@{value}px"; }
+      .@{prefix}-pt-@{value}  { padding-top:    ~"@{value}px"; }
+      .@{prefix}-pl-@{value}  { padding-left:   ~"@{value}px"; }
+      .@{prefix}-pr-@{value}  { padding-right:  ~"@{value}px"; }
+      .@{prefix}-pb-@{value}  { padding-bottom: ~"@{value}px"; }
+      .@{prefix}-m-@{value}   { margin:         ~"@{value}px"; }
+      .@{prefix}-mt-@{value}  { margin-top:     ~"@{value}px"; }
+      .@{prefix}-ml-@{value}  { margin-left:    ~"@{value}px"; }
+      .@{prefix}-mr-@{value}  { margin-right:   ~"@{value}px"; }
+      .@{prefix}-mb-@{value}  { margin-bottom:  ~"@{value}px"; }
+    }
+  }

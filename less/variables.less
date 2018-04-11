@@ -179,12 +179,12 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
+@btn-default-color:              @palette2;
 @btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-border:             darken(@btn-default-bg, 5%);
 
 @btn-primary-color:              #fff;
-@btn-primary-bg:                 @brand-primary;
+@btn-primary-bg:                 @palette2;
 @btn-primary-border:             darken(@btn-primary-bg, 5%);
 
 @btn-success-color:              #fff;
@@ -206,9 +206,9 @@
 @btn-link-disabled-color:        @gray-light;
 
 // Allows for customizing button radius independently from global border radius
-@btn-border-radius-base:         @border-radius-base;
-@btn-border-radius-large:        @border-radius-large;
-@btn-border-radius-small:        @border-radius-small;
+@btn-border-radius-base:         0;
+@btn-border-radius-large:        0;
+@btn-border-radius-small:        0;
 
 
 //== Forms
@@ -228,11 +228,11 @@
 // TODO: Rename `@input-border-radius` to `@input-border-radius-base` in v4
 //** Default `.form-control` border radius
 // This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
-@input-border-radius:            @border-radius-base;
+@input-border-radius:            0;
 //** Large `.form-control` border radius
-@input-border-radius-large:      @border-radius-large;
+@input-border-radius-large:      0;
 //** Small `.form-control` border radius
-@input-border-radius-small:      @border-radius-small;
+@input-border-radius-small:      0;
 
 //** Border color for inputs on focus
 @input-border-focus:             #66afe9;
@@ -432,9 +432,10 @@
 @navbar-default-brand-hover-bg:            transparent;
 
 // Navbar toggle
-@navbar-default-toggle-hover-bg:           #ddd;
-@navbar-default-toggle-icon-bar-bg:        #888;
-@navbar-default-toggle-border-color:       #ddd;
+@navbar-default-toggle-bg: #fff;
+@navbar-default-toggle-hover-bg:           darken(@navbar-default-toggle-bg, 10%);
+@navbar-default-toggle-icon-bar-bg:        @palette4;
+@navbar-default-toggle-border-color:       @navbar-default-toggle-icon-bar-bg;
 
 
 //=== Inverted navbar

@@ -21,8 +21,13 @@
 
   .scrolled & {
     > img {
-      height: ( ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) ) * @navbar-brand-ratio );
-      width: ( ( ( ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) ) * @brand-width ) / @brand-height ) * @navbar-brand-ratio );
+      height: ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) );
+      width: ( ( ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) ) * @brand-width ) / @brand-height );
+
+      @media (min-width: @grid-float-breakpoint) {
+        height: ( ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) ) * @navbar-brand-ratio );
+        width: ( ( ( ( @navbar-height - ( @navbar-brand-padding-vertical * 2 ) ) * @brand-width ) / @brand-height ) * @navbar-brand-ratio );
+      }
     }
   }
 
@@ -51,7 +56,7 @@
 
 .navbar-default {
   transition: all 400ms ease 100ms;
-
+  background-color: @palette2;
 
   .navbar-collapse,
   .navbar-form {
@@ -59,6 +64,7 @@
   }
 
   @media (min-width: @grid-float-breakpoint) {
+    background-color: @navbar-default-bg;   
     padding-top: ( @navbar-padding-vertical * .75 );
   }
 }
@@ -68,6 +74,15 @@
 
 
 
+// Navbar toggle
+//
+// Custom button for toggling the `.navbar-collapse`, powered by the collapse
+// JavaScript plugin.
+
+.navbar-toggle {
+  background-color: @navbar-default-toggle-bg;
+  border-radius: 0; // -- je ne souhaite pas de border radius
+}
 
 
 
@@ -96,6 +111,8 @@ body.scrolled {
 
 
   .navbar-default {
+    background-color: @palette2;
+
     @media (min-width: @grid-float-breakpoint) {
       padding-top: ( @navbar-padding-vertical * 0 );
     }

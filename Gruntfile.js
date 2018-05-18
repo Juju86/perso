@@ -5,9 +5,9 @@ module.exports = function(grunt) {
     less: {
       development: {
         options: {
-          compress: true,
-          yuicompress: true,
-          optimization: 2
+          //compress: true,
+          //yuicompress: true,
+          //optimization: 2
         },
         files: {
           "assets/css/styles.css": "import.less" // destination file and source file

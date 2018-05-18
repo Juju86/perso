@@ -1,0 +1,19 @@
+.images {
+    .images-inner {
+        .images-stack {
+            position: relative;
+            img {
+                margin: @padding-large-vertical 0;
+                @media (min-width: @grid-float-breakpoint) {
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+.image-item {
+    .img-responsive();
+    border: 10px solid #fff;
+    .box-shadow(1px 1px 4px fade(#000, 25%));
+}

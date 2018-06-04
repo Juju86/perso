@@ -4150,7 +4150,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   min-height: 76px;
   margin-bottom: 24px;
-  border: 5px solid transparent;
+  border: 1px solid transparent;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -4223,7 +4223,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-static-top {
   z-index: 1000;
-  border-width: 0 0 5px;
+  border-width: 0 0 1px;
 }
 @media (min-width: 768px) {
   .navbar-static-top {
@@ -4245,7 +4245,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-fixed-top {
   top: 0;
-  border-width: 0 0 5px;
+  border-width: 0 0 1px;
 }
 .navbar-fixed-bottom {
   bottom: 0;
@@ -11172,6 +11172,9 @@ section article {
   z-index: 2;
   padding: 0 0 200px 0;
 }
+section article.big {
+  padding: 50px 0 300px 0;
+}
 section .background {
   transform: skew(0, 6deg);
   background-color: #fff;
@@ -11194,7 +11197,7 @@ section .background.bordered {
   border-bottom: 15px solid #fff;
 }
 /*
-Pour faire les deux bg image en 50% 50% 
+Pour faire les deux bg image en 50% 50%
 
 
 élément {
@@ -11275,6 +11278,15 @@ body.scrolled .navbar-default {
 @media (min-width: 768px) {
   .images .images-inner .images-stack img {
     position: absolute;
+  }
+  .images .images-inner .images-stack img:nth-of-type(1) {
+    top: -175px;
+  }
+  .images .images-inner .images-stack img:nth-of-type(2) {
+    top: 0px;
+  }
+  .images .images-inner .images-stack img:nth-of-type(3) {
+    top: 175px;
   }
 }
 .image-item {

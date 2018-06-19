@@ -1,6 +1,29 @@
 .coord {
-  width: 400px;
-  .coord-inner {
-      background-color: #fff;
-  }
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    z-index: 100;
+
+    width: 380px;
+    height: auto;
+
+    .box-shadow(1px 1px 4px fade(#000, 25%));
+
+    .coord-inner {
+        background-color: #fff;
+
+        a {
+            color: @palette1;
+            &:hover,
+            &:focus  {
+              color: darken(@palette1, 10%);
+            }
+
+            &:active,
+            &.active {
+                color: darken(@palette1, 15%);
+            }
+        }
+    }
 }

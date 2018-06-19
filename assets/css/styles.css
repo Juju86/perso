@@ -1444,7 +1444,7 @@ dd {
 @media (min-width: 768px) {
   .dl-horizontal dt {
     float: left;
-    width: 160px;
+    width: 50px;
     clear: left;
     text-align: right;
     overflow: hidden;
@@ -1452,7 +1452,7 @@ dd {
     white-space: nowrap;
   }
   .dl-horizontal dd {
-    margin-left: 180px;
+    margin-left: 70px;
   }
 }
 abbr[title],
@@ -6459,7 +6459,9 @@ button.close {
 .modal-header:before,
 .modal-header:after,
 .modal-footer:before,
-.modal-footer:after {
+.modal-footer:after,
+.dl-horizontal dd:before,
+.dl-horizontal dd:after {
   content: " ";
   display: table;
 }
@@ -6478,7 +6480,8 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-header:after,
-.modal-footer:after {
+.modal-footer:after,
+.dl-horizontal dd:after {
   clear: both;
 }
 .center-block {
@@ -11206,6 +11209,30 @@ Pour faire les deux bg image en 50% 50%
     top: -28px;
 }
 */
+.coord {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 100;
+  width: 380px;
+  height: auto;
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+}
+.coord .coord-inner {
+  background-color: #fff;
+}
+.coord .coord-inner a {
+  color: #fbd33a;
+}
+.coord .coord-inner a:hover,
+.coord .coord-inner a:focus {
+  color: #fac808;
+}
+.coord .coord-inner a:active,
+.coord .coord-inner a.active {
+  color: #e4b605;
+}
 .navbar-brand {
   padding: 3.8px 19px;
 }
@@ -11267,6 +11294,34 @@ body.scrolled .navbar-default {
 @media (min-width: 768px) {
   body.scrolled .navbar-default {
     padding-top: 0px;
+  }
+}
+dl {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+dt,
+dd {
+  line-height: 1.72857143;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .dl-horizontal dt {
+    float: left;
+    width: 50px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dl-horizontal dd {
+    margin-left: 70px;
   }
 }
 .images .images-inner .images-stack {

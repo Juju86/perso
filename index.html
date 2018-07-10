@@ -60,6 +60,7 @@
             </header>
           </div>
         </div>
+        <div class="overlay"></div>
       </div>
     </div>
     <div class="content">
@@ -121,6 +122,7 @@
               </div>
             </article>
             <div class="background bordered image image--1"></div>
+            <div class="overlay"></div>
           </div>
         </section>
 
@@ -168,6 +170,7 @@
               </div>
             </article>
             <div class="background bordered image image--1"></div>
+            <div class="overlay"></div>
           </div>
         </section>
         <section>
@@ -185,14 +188,17 @@
                 </div>
               </article>
               <div class="background image image--1"></div>
+              <div class="overlay"></div>
             </div>
           </section>
 
       </div>
     </div>
 
-    <div class="coord">
+
+    <div class="coord open">
       <div class="coord-inner xxs-p-20">
+        <button type="button" class="close" aria-label="Close" onclick="closeCoord(this)"><span aria-hidden="true">&times;</span></button>
         <dl class="dl-horizontal">
           <dt></dt>
           <dd><b class="text-uppercase palette2-t xxs-fs-2">Agence Gan Océan</b></dd>
@@ -227,5 +233,16 @@
     <script src="assets/js/aos.js"></script>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+
+      function closeCoord(e) {
+        console.log();
+        $(e).closest('.coord').removeClass('open');
+      }
+
+    </script>
+
+
   </body>
 </html>

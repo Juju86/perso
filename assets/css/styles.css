@@ -11417,13 +11417,32 @@ Pour faire les deux bg image en 50% 50%
   bottom: 25px;
   right: 25px;
   z-index: 100;
-  width: 380px;
-  height: auto;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
 }
-.coord .coord-inner {
-  background-color: #fff;
+.coord .content {
+  display: none;
+  padding: 20px;
+}
+.coord .button {
+  display: block;
+  line-height: 60px;
+  text-align: center;
+}
+.coord.open {
+  width: 380px;
+  height: auto;
+  border-radius: 0px;
+}
+.coord.open .button {
+  display: none;
+}
+.coord.open .content {
+  display: block;
 }
 .coord .coord-inner a {
   color: #fbd33a;

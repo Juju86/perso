@@ -1,5 +1,5 @@
 (function() {
-  console.log($( window ));
+  // console.log($( window ));
 
   $( window ).on('scroll resize', function() {
     if( $( this ).scrollTop() > 80 ) {
@@ -26,9 +26,8 @@
 
 
 $('#slider1').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-  console.log('next ' + nextSlide);
+  // console.log('next ' + nextSlide);
 });
 $('#slider1').on('afterChange', function(event, slick, currentSlide){
-  console.log('current ' + currentSlide);
+  // console.log('current ' + currentSlide);
 });
-

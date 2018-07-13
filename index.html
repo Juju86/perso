@@ -196,29 +196,34 @@
     </div>
 
 
-    <div class="coord open">
-      <div class="coord-inner xxs-p-20">
-        <button type="button" class="close" aria-label="Close" onclick="closeCoord(this)"><span aria-hidden="true">&times;</span></button>
-        <dl class="dl-horizontal">
-          <dt></dt>
-          <dd><b class="text-uppercase palette2-t xxs-fs-2">Agence Gan Océan</b></dd>
-        </dl>
-        <dl class="dl-horizontal">
-          <dt><i class="fa fa-map-marker xxs-mr-5 xxs-fs-3 palette1-t" aria-hidden="true"></i></dt>
-          <dd><span class="palette2-t">9, avenue des Amériques<br>17000 LA ROCHELLE</span></dd>
-        </dl>
-        <dl class="dl-horizontal">
-          <dt><i class="fa fa-phone xxs-mr-5 xxs-fs-3 palette1-t" aria-hidden="true"></i></dt>
-          <dd><span class="palette2-t">05 46 41 13 61</dd>
-        </dl>
-        <dl class="dl-horizontal">
-          <dt><i class="fa fa-envelope xxs-mr-5 xxs-fs-3 palette1-t" aria-hidden="true"></i></dt>
-          <dd><a href="mailto:la-rochelle-ocean@gan.fr">la-rochelle-ocean<span class=" palette1-t">@</span>gan.fr</a></dd>
-        </dl>
-        <dl class="dl-horizontal">
-          <dt><i class="fa fa-home xxs-mr-5 xxs-fs-3 palette1-t" aria-hidden="true"></i></dt>
-          <dd><span class="palette2-t">Lundi - Vendredi<br>09h - 12h <span class=" palette1-t">|</span> 14h - 18h</dd>
-        </dl>
+    <div class="coord">
+      <div class="coord-inner">
+        <div class="button" onclick="openCoord(this)">
+          <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+        </div>
+        <div class="content">
+          <button type="button" class="close" aria-label="Close" onclick="closeCoord(this)"><span aria-hidden="true">&times;</span></button>
+          <dl class="dl-horizontal">
+            <dt></dt>
+            <dd><b class="text-uppercase palette2-t xxs-fs-2">Agence Gan Océan</b></dd>
+          </dl>
+          <dl class="dl-horizontal">
+            <dt><i class="fa fa-map-marker xxs-mr-5 xxs-fs-3 palette1-t" aria-hidden="true"></i></dt>
+            <dd><span class="palette2-t">9, avenue des Amériques<br>17000 LA ROCHELLE</span></dd>
+          </dl>
+          <dl class="dl-horizontal">
+            <dt><i class="fa fa-phone xxs-mr-5 xxs-fs-3 palette1-t" aria-hidden="true"></i></dt>
+            <dd><span class="palette2-t">05 46 41 13 61</dd>
+          </dl>
+          <dl class="dl-horizontal">
+            <dt><i class="fa fa-envelope xxs-mr-5 xxs-fs-3 palette1-t" aria-hidden="true"></i></dt>
+            <dd><a href="mailto:la-rochelle-ocean@gan.fr">la-rochelle-ocean<span class=" palette1-t">@</span>gan.fr</a></dd>
+          </dl>
+          <dl class="dl-horizontal">
+            <dt><i class="fa fa-home xxs-mr-5 xxs-fs-3 palette1-t" aria-hidden="true"></i></dt>
+            <dd><span class="palette2-t">Lundi - Vendredi<br>09h - 12h <span class=" palette1-t">|</span> 14h - 18h</dd>
+          </dl>
+        </div>
       </div>
     </div>
 
@@ -236,8 +241,10 @@
 
     <script>
 
+      function openCoord(e) {
+        $(e).closest('.coord').addClass('open');
+      }
       function closeCoord(e) {
-        console.log();
         $(e).closest('.coord').removeClass('open');
       }
 

@@ -1,29 +1,52 @@
 .coord {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
 
-    z-index: 100;
+  z-index: 100;
 
+  width: 50px;
+  height: 50px;
+
+  background-color: #fff;
+
+  border-radius: 50%;
+  .box-shadow(1px 1px 4px fade(#000, 25%));
+
+  .content {
+    display: none;
+    padding: 20px;
+  }
+  .button {
+    display: block;
+
+    line-height: 60px;
+    text-align: center;
+  }
+
+  &.open {
     width: 380px;
     height: auto;
 
-    .box-shadow(1px 1px 4px fade(#000, 25%));
-
-    .coord-inner {
-        background-color: #fff;
-
-        a {
-            color: @palette1;
-            &:hover,
-            &:focus  {
-              color: darken(@palette1, 10%);
-            }
-
-            &:active,
-            &.active {
-                color: darken(@palette1, 15%);
-            }
-        }
+    border-radius: 0px;
+    .button {
+      display: none;
     }
+    .content {
+      display: block;
+    }
+  }
+  .coord-inner {
+    a {
+      color: @palette1;
+      &:hover,
+      &:focus  {
+        color: darken(@palette1, 10%);
+      }
+      &:active,
+      &.active {
+        color: darken(@palette1, 15%);
+      }
+    }
+  }
 }

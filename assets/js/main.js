@@ -15,7 +15,7 @@
     slidesToShow: 1,
     centerPadding: '125px',
     dots: true,
-    arrows: true,
+    arrows: false,
     cssEase: 'linear',
     centerMode: true,
     autoplay: true,

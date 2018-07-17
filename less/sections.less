@@ -12,7 +12,9 @@ section {
     }
   }
   .background {
-    transform: skew(0, 6deg);
+    &.skew {
+      transform: skew(0, 6deg);
+    }
     background-color: #fff;
 
     z-index: 1;
@@ -39,7 +41,6 @@ section {
   }
 
   .overlay {
-    transform: skew(0, 6deg);
     position: absolute;
 
     z-index: 2;
@@ -49,8 +50,19 @@ section {
     top: -75px;
     left: 0;
 
-    background-color: fade(#000, 60%);
+    background-color: fade(@brand-primary, 60%);
   }
+
+
+
+    &.skew {
+      .background {
+          transform: skew(0, 6deg);
+      }
+      .overlay {
+        transform: skew(0, 6deg);
+      }
+    }
 
 
 }

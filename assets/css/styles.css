@@ -11354,7 +11354,14 @@ button.close {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(51, 122, 183, 0.6);
+  background-color: rgba(18, 43, 64, 0.75);
+}
+.header .header-inner .overlay.gradient {
+  background-image: -webkit-linear-gradient(left, rgba(18, 43, 64, 0.25) 0%, #122b40 100%);
+  background-image: -o-linear-gradient(left, rgba(18, 43, 64, 0.25) 0%, #122b40 100%);
+  background-image: linear-gradient(to right, rgba(18, 43, 64, 0.25) 0%, #122b40 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40122b40', endColorstr='#ff122b40', GradientType=1);
 }
 .header .header-inner .container {
   position: relative;
@@ -11398,14 +11405,17 @@ section .overlay {
   width: 100%;
   top: -75px;
   left: 0;
-  background-color: rgba(51, 122, 183, 0.6);
+  background-color: rgba(18, 43, 64, 0.75);
 }
-section .overlay.graddient {
-  background-image: -webkit-linear-gradient(top, rgba(51, 122, 183, 0.6) 0%, #000 100%);
-  background-image: -o-linear-gradient(top, rgba(51, 122, 183, 0.6) 0%, #000 100%);
-  background-image: linear-gradient(to bottom, rgba(51, 122, 183, 0.6) 0%, #000 100%);
+section .overlay.bordered {
+  border-bottom: 15px solid #fff;
+}
+section .overlay.gradient {
+  background-image: -webkit-linear-gradient(left, rgba(18, 43, 64, 0.25) 0%, #122b40 100%);
+  background-image: -o-linear-gradient(left, rgba(18, 43, 64, 0.25) 0%, #122b40 100%);
+  background-image: linear-gradient(to right, rgba(18, 43, 64, 0.25) 0%, #122b40 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#99337ab7', endColorstr='#ff000000', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40122b40', endColorstr='#ff122b40', GradientType=1);
 }
 section.skew .background {
   transform: skew(0, 5deg);
@@ -11584,4 +11594,16 @@ dd {
   border: 10px solid #fff;
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+}
+.images-slider .item {
+  position: relative;
+}
+.images-slider .item .message-item {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }

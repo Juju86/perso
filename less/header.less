@@ -25,7 +25,11 @@
       right: 0;
       bottom: 0;
 
-          background-color: fade(@brand-primary, 60%);
+      background-color: fade(darken(@brand-primary, 30%), 75%);
+
+      &.gradient {
+          #gradient > .horizontal(fade(darken(@brand-primary, 30%), 25%); darken(@brand-primary, 30%));
+      }
     }
 
     .container {

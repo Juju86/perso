@@ -11607,3 +11607,15 @@ dd {
   -o-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
 }
+.carte {
+  position: relative;
+}
+.carte .carte-body {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}

@@ -22,6 +22,7 @@
     autoplaySpeed: 3000,
     slidesToScroll: 1
   });
+
 })();
 
 

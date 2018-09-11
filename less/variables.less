@@ -2,15 +2,16 @@
 
 // Default Variables
 
-@slick-font-path: "../fonts/";
-@slick-font-family: "slick";
+@slick-font-path: "../fonts";
+@slick-font-family: "FontAwesome";
 @slick-loader-path: "./";
-@slick-arrow-color: white;
-@slick-dot-color: black;
-@slick-dot-color-active: @slick-dot-color;
-@slick-prev-character: "←";
-@slick-next-character: "→";
-@slick-dot-character: "•";
+@slick-arrow-color: darken(@brand-primary, 20%);
+@slick-dot-color: @brand-primary;
+@slick-dot-color-active: @brand-jaune;
+@slick-prev-character: @fa-var-angle-left;
+@slick-next-character: @fa-var-angle-right;
+@slick-dot-character: @fa-var-circle;
+@slick-dot-character-active: @fa-var-circle-o;
 @slick-dot-size: 6px;
 @slick-opacity-default: 0.75;
 @slick-opacity-on-hover: 1;
@@ -21,7 +22,7 @@
 // Variables
 // --------------------------
 
-@fa-font-path:        "../fonts/";
+@fa-font-path:        "../fonts";
 @fa-font-size-base:   14px;
 @fa-line-height-base: 1;
 //@fa-font-path:        "//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts"; // for referencing Bootstrap CDN font files directly
@@ -50,6 +51,7 @@
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
 @brand-primary:         darken(#428bca, 6.5%); // #337ab7
+@brand-jaune:           #fbd33a; // #337ab7
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
@@ -412,7 +414,7 @@
 
 @navbar-default-color:             #fff;
 @navbar-default-bg:                fade(#0f2346, 50%);
-@navbar-default-border:            #fbd33a;
+@navbar-default-border:            @brand-jaune;
 
 // Navbar links
 @navbar-default-link-color:                @navbar-default-color;

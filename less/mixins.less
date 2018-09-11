@@ -76,7 +76,7 @@
 // padding, margin helper class
 @screen-xxs: 0px;
 @screen-xl: 1600px;
-@values-array: 0, 5, 10, 15, 20, 30, 40, 50, 100;
+@values-array: 0, 5, 10, 15, 20, 30, 40, 50, 60, 75, 100, 150, 200;
 
   .make-space(@prefix) {
     .for(@values-array);
@@ -104,7 +104,7 @@
   .make-lh((@index - 1), @prefix);
 }
 
-// line-heigth helper class
+// font-size helper class
 @fs-val-array: 1, 1.5, 2, 2.5, 2.75, 3, 3.25, 3.75, 4, 5;
 
 .make-fs (@index, @prefix) when (@index > 0) {

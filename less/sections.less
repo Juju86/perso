@@ -7,6 +7,9 @@ section {
       z-index: 3;
 
       padding: 0 0 200px 0;
+      &.min {
+          padding: 0 0 120px 0;
+      }
       &.big {
           padding: 50px 0 300px 0;
       }
@@ -19,7 +22,7 @@ section {
       position: absolute;
       height: 100%;
       width: 100%;
-      top: -75px;
+      top: -85px;
       left: 0;
 
       &.image {
@@ -28,7 +31,7 @@ section {
           background-position: center;
 
           &.image--1 {
-              background-image: url(../img/bg1.jpg);
+              background-image: url(../img/fond1.jpg);
           }
       }
       &.bordered {
@@ -42,16 +45,22 @@ section {
 
         height: 100%;
         width: 100%;
-        top: -75px;
+        top: -85px;
         left: 0;
-
-        background-color: fade(darken(@brand-primary, 30%), 75%);
 
         &.bordered {
             border-bottom: 15px solid #fff;
         }
         &.gradient {
+          background-color: fade(darken(@brand-primary, 30%), 80%);
+
+          &.vertical {
+            #gradient > .vertical(fade(darken(@brand-primary, 30%), 25%); darken(@brand-primary, 30%));
+          }
+
+          &.horizontal {
             #gradient > .horizontal(fade(darken(@brand-primary, 30%), 25%); darken(@brand-primary, 30%));
+          }
         }
     }
     &.skew {
